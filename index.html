@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div class="container">
+            <label for="Icolor">Escreva uma cor em ingles</label>
+            <input type="text" id="Icolor" />
+            <button onclick="adicionar()">Adicionar</button>
+            <br>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th id="name">Nome</th>
+                    <th id="cor">Cor</th>
+                </tr>
+            </thead>
+
+            <tbody id="color">
+            </tbody>
+        </table>
+    </body>
+    <script>
+        var data = [];
+        var click = 0;
+        function adicionar() {
+            var cod = document.getElementById("Icolor").value;
+            var pac = document.getElementById("color").innerHTML;
+            pac = cod;
+            
+            data[click] = "<tr><td>" + pac + "</td>" + "<td style='background-color:" + pac + ";'></td>" + "</tr>";
+            document.getElementById("color").innerHTML = data.join("");
+            click++
+        }
+    </script>
+
+</html>
